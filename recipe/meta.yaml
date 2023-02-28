@@ -1,5 +1,5 @@
 {% set name = "pybids" %}
-{% set version = "0.15.5" %}
+{% set version = "0.15.6" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pybids-{{ version }}.tar.gz
-  sha256: af22225a91688742929b22c8e0b0e7f84917118c0322bf3f03ba29a1927e6e8e
+  sha256: 3a3596d3cb725431e41745f73dafb5d07603ffb1b2b29e43904b7d2da571b1d3
 
 build:
   entry_points:
@@ -21,15 +21,17 @@ requirements:
     - pip
     - python >=3.7
     - setuptools >=30.3.0,!=61.0.0
+    - versioneer
+    - tomli
   run:
+    - python >=3.7
     - bids-validator
     - click >=8.0
-    - formulaic >=0.2.4,<0.4
+    - formulaic >=0.2.4,<0.6
     - nibabel >=2.1
     - num2words
     - numpy
     - pandas >=0.23
-    - python >=3.7
     - scipy
     - sqlalchemy <1.4.0.dev0
 
