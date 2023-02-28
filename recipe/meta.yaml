@@ -21,7 +21,8 @@ requirements:
     - pip
     - python >=3.7
     - setuptools >=30.3.0,!=61.0.0
-    - versioneer[toml]
+    - versioneer
+    - tomli
   run:
     - python >=3.7
     - bids-validator
