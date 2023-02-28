@@ -21,15 +21,16 @@ requirements:
     - pip
     - python >=3.7
     - setuptools >=30.3.0,!=61.0.0
+    - versioneer[toml]
   run:
+    - python >=3.7
     - bids-validator
     - click >=8.0
-    - formulaic >=0.2.4,<0.4
+    - formulaic >=0.2.4,<0.6
     - nibabel >=2.1
     - num2words
     - numpy
     - pandas >=0.23
-    - python >=3.7
     - scipy
     - sqlalchemy <1.4.0.dev0
 
