@@ -1,5 +1,5 @@
 {% set name = "pybids" %}
-{% set version = "0.16.3" %}
+{% set version = "0.16.4" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pybids-{{ version }}.tar.gz
-  sha256: 10e279350c8d14ca602c0d4469a5e4bf7ff393e8643c831a546ae735b6b82cc3
+  sha256: a5a865f308ba49ff00b95aa4be2ec7f745621ebfbdbad6f5e1956628adeb166e
 
 build:
   entry_points:
