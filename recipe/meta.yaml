@@ -34,6 +34,7 @@ requirements:
     - bids-validator >=1.11
     - num2words >=0.5.5
     - click >=8.0
+    - universal_pathlib >=0.2.2
 
 test:
   imports:
