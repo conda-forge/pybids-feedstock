@@ -1,5 +1,5 @@
 {% set name = "pybids" %}
-{% set version = "0.16.5" %}
+{% set version = "0.17.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/pybids-{{ version }}.tar.gz
-  sha256: e4c029e426253a1d56c6c5ce13f2c754d9bf2b854615a2ca59a68a6302a34083
+  sha256: e000335eae5b7749ea9621adca4a17309fb9a4bb67a3f4231a70155267875a50
 
 build:
   entry_points:
@@ -34,6 +34,7 @@ requirements:
     - bids-validator >=1.11
     - num2words >=0.5.5
     - click >=8.0
+    - universal_pathlib >=0.2.2
 
 test:
   imports:
