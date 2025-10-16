@@ -1,6 +1,6 @@
 {% set name = "pybids" %}
-{% set version = "0.20.0" %}
-{% set python_min = "3.9" %}
+{% set version = "0.21.0" %}
+{% set python_min = "3.10" %}
 
 package:
   name: {{ name|lower }}
@@ -8,7 +8,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pybids-{{ version }}.tar.gz
-  sha256: a68b577426942e50e6ac37e011463361d00a378d19b75df817619450357ebbb6
+  sha256: 3b90136dc9ac865214cb9343e89a8e10ad5e4d9fe3ec7983adeb92f60f9e40cd
 
 build:
   entry_points:
@@ -26,10 +26,10 @@ requirements:
     - tomli
   run:
     - python >={{ python_min }}
-    - numpy >=1.23
-    - scipy >=1.9
-    - nibabel >=4.0
-    - pandas >=1.5
+    - numpy >=1.24
+    - scipy >=1.10
+    - nibabel >=5.0
+    - pandas >=2.0
     - formulaic >=0.3
     - sqlalchemy >=1.4.31
     - bids-validator >=1.14.7
