@@ -1,0 +1,69 @@
+schema_version: 1
+
+context:
+  name: pybids
+  version: "0.21.0"
+  python_min: "3.10"
+
+package:
+  name: ${{ name|lower }}
+  version: ${{ version }}
+
+source:
+  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pybids-${{ version }}.tar.gz
+  sha256: 3b90136dc9ac865214cb9343e89a8e10ad5e4d9fe3ec7983adeb92f60f9e40cd
+
+build:
+  number: 1
+  noarch: python
+  script: ${{ PYTHON }} -m pip install . -vv
+  python:
+    entry_points:
+      - pybids=bids.cli:cli
+
+requirements:
+  host:
+    - pip
+    - python ${{ python_min }}.*
+    - setuptools
+    - versioneer
+    - tomli
+  run:
+    - python >=${{ python_min }}
+    - numpy >=1.24
+    - scipy >=1.10
+    - nibabel >=5.0
+    - pandas >=2.0
+    - formulaic >=0.3
+    - sqlalchemy >=1.4.31
+    - bids-validator >=1.14.7
+    - num2words >=0.5.10
+    - click >=8.0
+    - universal_pathlib >=0.2.2
+    - frozendict >=2.3
+
+tests:
+  - python:
+      imports:
+        - bids
+      pip_check: true
+      python_version: ${{ python_min }}
+  - requirements:
+      run:
+        - python ${{ python_min }}.*
+        - pip
+    script:
+      - pybids --help
+
+about:
+  summary: "bids: interface with datasets conforming to BIDS"
+  license: MIT
+  license_file:
+    - LICENSE
+  homepage: http://github.com/bids-standard/pybids
+
+extra:
+  recipe-maintainers:
+    - adelavega
+    - effigies
+    - sarthakpati
