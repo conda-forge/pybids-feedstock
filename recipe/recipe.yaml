@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: pybids
-  version: "0.21.0"
+  version: "0.22.0"
   python_min: "3.10"
 
 package:
@@ -11,10 +11,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/pybids-${{ version }}.tar.gz
-  sha256: 3b90136dc9ac865214cb9343e89a8e10ad5e4d9fe3ec7983adeb92f60f9e40cd
+  sha256: 98e7957e47c08d3c131de6f6cef629d009abce888849102b33820ca6a9930152
 
 build:
-  number: 1
+  number: 0
   noarch: python
   script: ${{ PYTHON }} -m pip install . -vv
   python:
@@ -30,9 +30,9 @@ requirements:
     - tomli
   run:
     - python >=${{ python_min }}
-    - numpy >=1.24
-    - scipy >=1.10
-    - nibabel >=5.0
+    - numpy >=1.25
+    - scipy >=1.11
+    - nibabel >=5.1
     - pandas >=2.0
     - formulaic >=0.3
     - sqlalchemy >=1.4.31
